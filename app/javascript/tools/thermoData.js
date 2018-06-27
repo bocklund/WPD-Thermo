@@ -20,7 +20,8 @@ wpd.thermoData = {
         wpd.popup.show('add-axis-thermodata-popup');
     },
     
-    addDatasetMetadata: function() {        
+    addDatasetMetadata: function() {
+        // TODO: enable multiple conditions        
         console.log("Execute adding dataset metadata to the output JSON");
         const conditionSelector = document.getElementById('add-thermodata-dataset-condition-type-selector');
         let cond_type = conditionSelector.value;
@@ -29,15 +30,21 @@ wpd.thermoData = {
             condition_type: cond_type,
         };
 
+        // set the metadata for the specific condition type
         if (cond_type == "tieline") {
-            
-            
-            datasetMetadata
+            datasetMetadata.phases = wpd.thermoData.datasetConditions.getTielinePhases();
+            datasetMetadata.nullPhaseIndicies = []
         }
-
+        // TODO: remove fixed-phase as an option and instead use checkboxes to enable null tieline phases.
+        if (cond_type == "fixed-phase") {
+            fixedPhase = document.getElementById('thermodata-condition-fixed-phase-input-fixed').value
+            freePhase = document.getElementById('thermodata-condition-fixed-phase-input-free').value
+            datasetMetadata.phases = [fixedPhase, freePhase]
+            datasetMetadata.nullPhaseIndicies = [1]
+        }
         
         console.log(datasetMetadata);
-        wpd.popup.close('add-thermodata-popup');
+        wpd.popup.close('add-dataset-thermodata-popup');
     },
 
     showAddDatasetMetadata: function() {    
@@ -79,7 +86,12 @@ wpd.thermoData = {
         },
 
         getTielinePhases: function() {
-
+            const numTielinePhasesSelector = document.getElementById('add-thermodata-condition-num-tielines-selector');  
+            tielinePhases = new Array(Number(numTielinePhasesSelector.value));
+            for (var i = 0; i < tielinePhases.length; i++) {
+                tielinePhases[i] = document.getElementById('thermodata-condition-tieline-phase-input-'+(i+1)).value;
+            }
+            return tielinePhases
         }
 
     },

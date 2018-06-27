@@ -503,13 +503,13 @@
     <!-- Add thermodynamic metadata to axis-->
     <div id="add-axis-thermodata-popup" class="popup" style="width:450px;">
         <div class="popupheading">Add Thermodynamic Metadata</div>
-        <p>Components: <input type="text" id="add-thermodata-components-input" value="Cu-Mg"/></p>
+        <p>Components: <input type="text" id="add-thermodata-components-input" value="Cu-Mg"  size="12"/></p>
         <br/>
 <!-- previous iteration where type was a selector, instead we just use text input -->
 <!--         <p>X-axis type: <select id="y-axis-type-selector"><option value="composition">Composition</option><option value="temperature">Temperature</option><option value="value">Thermodynamic Value</option></select>  Name: <input type="text" id="x-axis-type-input" value="HM_FORM"/></p> -->
-        <p>X-axis name: <input type="text" id="thermodata-x-axis-type-input" value="X_MG"/></p>
+        <p>X-axis name: <input type="text" id="thermodata-x-axis-type-input" value="X_MG"  size="6"/></p>
         <br/>
-        <p>Y-axis name: <input type="text" id="thermodata-y-axis-type-input" value="T or HM_MIX or ..."/></p>
+        <p>Y-axis name: <input type="text" id="thermodata-y-axis-type-input" value="T or HM_MIX or ..."  size="10"/></p>
         <br/>
         <p align="center"><input type="button" value="{{ _("Cancel") }}" onclick="wpd.popup.close('add-axis-thermodata-popup');"/> <input type="button" value="Ok" onclick="wpd.thermoData.addAxisMetadata();"/></p>
     </div>
@@ -528,22 +528,22 @@
         </select></p>
         <br/>
         <div id="thermodata-dataset-condition-fixed-phase">
-            <p>Fixed phase: <input type="text" id="thermodata-condition-fixed-phase-input-fixed" value="FCC_A1"/></p>
-            <p>Free phase: <input type="text" id="thermodata-condition-fixed-phase-input-free" value="BCC_A2"/></p>
+            <p>Fixed phase: <input type="text" id="thermodata-condition-fixed-phase-input-fixed" value="FCC_A1" size="10"/></p>
+            <p>Free phase: <input type="text" id="thermodata-condition-fixed-phase-input-free" value="BCC_A2" size="10"/></p>
         </div>
         <div id="thermodata-dataset-condition-tieline" hidden=true>
             <p>Number of phases per tieline: <select id="add-thermodata-condition-num-tielines-selector" onchange="wpd.thermoData.datasetConditions.showTielineFields();" onfocus="this.selectedIndex = -1;"><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></p>
-            <div id='thermodata-condition-tieline-phase-1' hidden=false><p>Phase 1: <input type="text" id="thermodata-condition-tieline-phase-input-1" value="FCC_A1"/></p></div>
-            <div id='thermodata-condition-tieline-phase-2' hidden=false><p>Phase 2: <input type="text" id="thermodata-condition-tieline-phase-input-2" value="BCC_A2"/></p></div>
-            <div id='thermodata-condition-tieline-phase-3' hidden=true><p>Phase 3: <input type="text" id="thermodata-condition-tieline-phase-input-3" value="HCP_A3"/></p></div>
-            <div id='thermodata-condition-tieline-phase-4' hidden=true><p>Phase 4: <input type="text" id="thermodata-condition-tieline-phase-input-4" value="DIAMOND_A4"/></p></div>
-            <div id='thermodata-condition-tieline-phase-5' hidden=true><p>Phase 5: <input type="text" id="thermodata-condition-tieline-phase-input-5" value="BETASN_A5"/></p></div>
+            <div id='thermodata-condition-tieline-phase-1' hidden=false><p>Phase 1: <input type="text" id="thermodata-condition-tieline-phase-input-1" value="FCC_A1" size="10"/></p></div>
+            <div id='thermodata-condition-tieline-phase-2' hidden=false><p>Phase 2: <input type="text" id="thermodata-condition-tieline-phase-input-2" value="BCC_A2" size="10"/></p></div>
+            <div id='thermodata-condition-tieline-phase-3' hidden=true><p>Phase 3: <input type="text" id="thermodata-condition-tieline-phase-input-3" value="HCP_A3" size="10"/></p></div>
+            <div id='thermodata-condition-tieline-phase-4' hidden=true><p>Phase 4: <input type="text" id="thermodata-condition-tieline-phase-input-4" value="DIAMOND_A4" size="10"/></p></div>
+            <div id='thermodata-condition-tieline-phase-5' hidden=true><p>Phase 5: <input type="text" id="thermodata-condition-tieline-phase-input-5" value="BETASN_A5" size="10"/></p></div>
         </div>
         <div id="thermodata-dataset-condition-temperature" hidden=true>
-                <p>Temperature (K) = <input type="text" id="thermodata-condition-temperature-input" value="298.15"/></p>                </p>
+                <p>Temperature (K) = <input type="text" id="thermodata-condition-temperature-input" value="298.15" size="10"/></p>                </p>
         </div>
         <div id="thermodata-dataset-condition-composition" hidden=true>
-                <p>Composition of: <input type="text" id="thermodata-condition-composition-component-0-input" value="CR"/></p> = <input type="text" id="thermodata-condition-composition-value-0-input" value="0.5"/></p>                </p>
+                <p>Composition of: <input type="text" id="thermodata-condition-composition-component-0-input" value="CR" size="4"/> = <input type="text" id="thermodata-condition-composition-value-0-input" value="0.5" size="10"/></p>
         </div>
         <br/>
         <p align="center"><input type="button" value="{{ _("Cancel") }}" onclick="wpd.popup.close('add-dataset-thermodata-popup');"/> <input type="button" value="Ok" onclick="wpd.thermoData.addDatasetMetadata();"/></p>
