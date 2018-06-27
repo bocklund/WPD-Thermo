@@ -27,6 +27,7 @@ class WPDTranslation:
 env = Environment(loader=FileSystemLoader('templates'), extensions=['jinja2.ext.i18n'])
 
 languages = ["en_US", "zh_CN", "fr_FR", "de_DE", "ru", "ja"]
+languages = ["en_US"] #, "zh_CN", "fr_FR", "de_DE", "ru", "ja"]
 
 def renderPage(filename):
     print("Rendering " + filename)
