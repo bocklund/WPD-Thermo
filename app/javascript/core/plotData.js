@@ -463,12 +463,13 @@ wpd.PlotData = class {
         data.axesColl = [];
         data.datasetColl = [];
         data.measurementColl = [];
-        
+
         // axes data
         for(let axIdx = 0; axIdx < this._axesColl.length; axIdx++) {
             const axes = this._axesColl[axIdx];
             let axData = {};
             axData.name = axes.name;
+            axData.thermoData = axes.thermoData;
             if(axes instanceof wpd.XYAxes) {
                 axData.type = "XYAxes";                
                 axData.isLogX = axes.isLogX();
@@ -512,6 +513,7 @@ wpd.PlotData = class {
             const autoDetectionData = this.getAutoDetectionDataForDataset(ds);
             let dsData = {};
             dsData.name = ds.name;
+            dsData.thermoData = ds.thermoData;
             dsData.axesName = axes != null ? axes.name: "";
             dsData.metadataKeys = ds.getMetadataKeys();
             dsData.data = [];

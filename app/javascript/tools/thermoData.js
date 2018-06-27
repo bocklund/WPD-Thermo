@@ -11,7 +11,10 @@ wpd.thermoData = {
             x: xInput.value,
             y: yInput.value
         };
+        console.log("Adding metadata to current axes");
         console.log(thermoAxisMetadata);
+        selectedAxes = wpd.tree.getActiveAxes();
+        selectedAxes.thermoData = thermoAxisMetadata;
         wpd.popup.close('add-axis-thermodata-popup');
     },
 
@@ -43,7 +46,10 @@ wpd.thermoData = {
             datasetMetadata.nullPhaseIndicies = [1]
         }
         
+        console.log("Adding metadata to current dataset");
         console.log(datasetMetadata);
+        selectedDataset = wpd.tree.getActiveDataset();
+        selectedDataset.thermoData = datasetMetadata;
         wpd.popup.close('add-dataset-thermodata-popup');
     },
 
