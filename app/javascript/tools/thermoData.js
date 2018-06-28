@@ -6,10 +6,14 @@ wpd.thermoData = {
         const componentsInput = document.getElementById('add-thermodata-components-input');
         const xInput = document.getElementById('thermodata-x-axis-type-input');
         const yInput = document.getElementById('thermodata-y-axis-type-input');
+        const bibtexReference = document.getElementById('thermodata-bibtex-reference');
+        const commentData = document.getElementById('thermodata-comment');
         thermoAxisMetadata = {
             components: componentsInput.value,
             x: xInput.value,
-            y: yInput.value
+            y: yInput.value,
+            comment: commentData.value,
+            reference: bibtexReference.value,
         };
         console.log("Adding metadata to current axes");
         console.log(thermoAxisMetadata);
